@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Map Request Form{% endblock %}
+
+{% block page_content %}
+<h1>Map Request Form</h1>
+<div class="col-md-4">
+	<form action="mapview" method="post" enctype="multipart/form-data">
+		<input type="text" name="name" value="Name:" /><br />
+		<input type="text" name="email" value="Email:" /><br /><br />
+		Page Size:<br>
+		<input type="radio" name="pageSize" value="std">8.5x11<br />
+		<input type="radio" name="pageSize" value="lg">11x17<br /><br />
+		Page Orientation:
+		<input type="radio" name="orientation" value="portrait" />Portrait<br />
+		<input type="radio" name="orientation" value="landscape" />Landscape<br />
+		<input type="submit" value="Next"  class="span2">
+	</form>
+</div>
+{% endblock %}

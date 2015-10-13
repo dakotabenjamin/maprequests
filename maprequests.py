@@ -6,7 +6,7 @@ from wtforms import StringField, \
 from wtforms.validators import Required, Email
 
 app = Flask(__name__)
-app.config.from_pyfile('maprequest.cfg')
+app.config.from_pyfile('maprequests.cfg')
 bootstrap = Bootstrap(app)
 
 class MapForm(Form):
@@ -39,6 +39,5 @@ def mapview():
     return render_template('map.html', pageSize='std', orientation='portrait')
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    submit = SubmitField('Submit')
+    app.run()
 
