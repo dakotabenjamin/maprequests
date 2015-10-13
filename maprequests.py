@@ -4,10 +4,14 @@ from flask.ext.wtf import Form
 from wtforms import StringField, \
         SelectField, RadioField, TextAreaField, SubmitField
 from wtforms.validators import Required, Email
+import logging 
+import sys
 
 app = Flask(__name__)
 app.config.from_pyfile('maprequests.cfg')
 bootstrap = Bootstrap(app)
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 class MapForm(Form):
     name = StringField('Name:', validators=[Required()])
