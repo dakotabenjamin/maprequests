@@ -18,5 +18,5 @@ setup(name='MapRequests',
           'dominate==2.1.16',
           'itsdangerous==0.24',
           'wsgiref==0.1.2'
-          ],
-     )
+      ],
+      )
